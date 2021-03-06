@@ -2,13 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TestComponent } from './test/test.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+
+// Material
+import {MatButtonModule} from '@angular/material/button'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NoopAnimationsModule,
+    HttpClientModule,
+    
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+
+    // Material
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
