@@ -12,12 +12,18 @@ import { environment } from '../environments/environment';
 
 
 // Material
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import { MainComponent } from './main/main.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { IntroComponent } from './intro/intro.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    MainComponent,
+    UserInfoComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,

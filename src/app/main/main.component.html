@@ -1,0 +1,14 @@
+<div class="container h-100">
+    
+    <div class="row w-100 h-100" *ngIf="currentId === INTRO_ID">
+        <app-intro class="h-auto my-auto col-md-12" (goToUserInfo)="this.next()"></app-intro>
+    </div>
+    
+    
+    <div class="row w-100 h-100" *ngIf="currentId === USER_INFO_ID">
+        <app-user-info class="h-auto my-auto col-md-12"></app-user-info>
+    </div>
+    
+    
+
+</div>

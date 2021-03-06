@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "bootstrap": "^4.6.0",
     "firebase": "7",
     "google-spreadsheet": "^3.1.15",
     "ng-google-sheets-db": "^1.1.0",
