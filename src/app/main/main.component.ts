@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-main',
@@ -15,6 +16,8 @@ export class MainComponent implements OnInit {
 
   currentId = 1;
 
+  user: User = new User();
+
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +25,7 @@ export class MainComponent implements OnInit {
 
   next() {
     this.currentId++;
+    console.log(this.user);
   }
 
 

@@ -1,6 +1,41 @@
 <div>
-    <p>user-info works!</p>
+    <div class="h2">Merci pour ce premier pas ! Nous avons maintenant quelques questions pour vous.</div>
 
+    <mat-divider class="mb-3"></mat-divider>
+
+    <label>Vous êtes : </label>
+    <mat-radio-group [(ngModel)]="user.sexe" aria-label="Veuillez sélectionner une option" class="row d-flex w-100 flex-column ml-3">
+        <mat-radio-button value="Homme">Homme</mat-radio-button>
+        <mat-radio-button value="Femme">Femme</mat-radio-button>
+        <mat-radio-button value="Autre">Autre</mat-radio-button>
+    </mat-radio-group>
     
+    <label>Vous écrivez de : </label>
+    <mat-radio-group [(ngModel)]="user.mainEcriture" aria-label="Veuillez sélectionner une option" class="row d-flex w-100 flex-column ml-3">
+        <mat-radio-button value="Droitier">La main droite</mat-radio-button>
+        <mat-radio-button value="Gaucher">La main gauche</mat-radio-button>
+        <mat-radio-button value="Ambidextre">Les deux mains</mat-radio-button>
+    </mat-radio-group>
+
+    <label>Avez-vous été diagnostiqué dyslexique ?</label>
+
+    <mat-radio-group [(ngModel)]="user.dyslexie" aria-label="Veuillez sélectionner une option" class="row d-flex w-100 flex-column ml-3">
+        <mat-radio-button value="Oui">Oui</mat-radio-button>
+        <mat-radio-button value="Non">Non</mat-radio-button>
+        <mat-radio-button value="Pense que oui">Non mais je pense l'être</mat-radio-button>
+    </mat-radio-group>
+
+    <label>Avez-vous des troubles avérés de l'attention / concentration ?</label>
+
+    <mat-radio-group [(ngModel)]="user.trouble" aria-label="Veuillez sélectionner une option" class="row d-flex w-100 flex-column ml-3">
+        <mat-radio-button value="Oui">Oui</mat-radio-button>
+        <mat-radio-button value="Non">Non</mat-radio-button>
+    </mat-radio-group>
+      
+    <button mat-raised-button color="primary" 
+        [disabled]="!user.isValid() ? true : null" 
+        (click)="nextClick()"
+        class="mt-3">Suivant</button>
+
 </div>
 

@@ -6,7 +6,7 @@
     
     
     <div class="row w-100 h-100" *ngIf="currentId === USER_INFO_ID">
-        <app-user-info class="h-auto my-auto col-md-12"></app-user-info>
+        <app-user-info [user]="this.user" (goToUserInfo)="this.next()" class="h-auto my-auto col-md-12"></app-user-info>
     </div>
     
     

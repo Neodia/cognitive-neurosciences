@@ -12,10 +12,16 @@ import { environment } from '../environments/environment';
 
 
 // Material
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider'; 
+
 import { MainComponent } from './main/main.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { IntroComponent } from './intro/intro.component'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,12 @@ import { IntroComponent } from './intro/intro.component';
     AngularFireDatabaseModule,
 
     // Material
-    MatButtonModule
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

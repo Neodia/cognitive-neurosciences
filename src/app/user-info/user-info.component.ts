@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-info',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
+  @Input()
+  user : User;
+  
+  @Output()
+  goToUserInfo = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  nextClick() { this.goToUserInfo.emit(); }
 }
