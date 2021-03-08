@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test-explanation',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-explanation.component.css']
 })
 export class TestExplanationComponent implements OnInit {
+
+  @Output()
+  goToTest = new EventEmitter();
 
   INTRO_ID = 1;
   DEMO_ID = 2;
@@ -71,8 +74,6 @@ export class TestExplanationComponent implements OnInit {
   startDemo() {
     this.currentId = this.DEMO_ID;
     this.workingWords = this.shuffle(this.words);
-    console.log(this.workingWords);
-    console.log(this.words);
     this.timer = "3";
 
     
@@ -90,5 +91,9 @@ export class TestExplanationComponent implements OnInit {
 
   startOver() {
     this.currentId = this.INTRO_ID;
+  }
+
+  nextClick() {
+    this.goToTest.emit();
   }
 }

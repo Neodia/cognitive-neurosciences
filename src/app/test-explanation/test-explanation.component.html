@@ -27,11 +27,11 @@
         Pour être sûr que tout soit bien compris vous allez pouvoir vous entrainer avec 6 items ! Si vous êtes prêt c’est parti ! 
     </p>
 
-    <button mat-raised-button color="primary" (click)="nextClick()">Démonstration ></button>
+    <button mat-raised-button color="primary" (click)="startDemo()">Démonstration ></button>
 
 </div>
 
-<div class="row">
+<div class="row" *ngIf="currentId == DEMO_ID">
     <div class="col-md-4 text-center h3">
         {{ item["left"] }}
     </div>
@@ -48,4 +48,24 @@
     <div class="col-md-4 text-center h3">
         {{ item["right"] }}
     </div>
+</div>
+
+<div *ngIf="currentId == OUTRO_ID">
+    <div class="h1">C’est bon, vous l’avez ? </div>
+
+    <p>
+        Vous pouvez encore retourner voir les consignes si vous le désirez. 
+    </p>
+   
+    <p>
+        Sinon, c’est parti !
+    </p>
+    
+    <p>
+        Nous vous rappelons qu’il est impératif que vous fixiez le point central !
+    </p>
+
+    <button mat-raised-button color="primary" (click)="startOver()">Retour aux consignes</button>
+    <button mat-raised-button color="primary" class="ml-3" (click)="nextClick()">C'est parti ! ></button>
+
 </div>
