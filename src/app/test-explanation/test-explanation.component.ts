@@ -15,12 +15,6 @@ export class TestExplanationComponent implements OnInit {
   OUTRO_ID = 3;
 
   currentId = 1;
-  timer = "";
-
-  item = {
-    left : "",
-    right: ""
-  }
 
   words = [ "Bamboo", "Loup", "Fromage", "Voiture", "Poupée", "Mug" ];
   workingWords = null;
@@ -52,41 +46,13 @@ export class TestExplanationComponent implements OnInit {
     return array;
   }
 
-  showItems() {
-    if(this.workingWords.length > 0) {
-      let position = ["left", "right"];
-      let randomPosIndex = Math.floor(Math.random() * position.length);;
-      let randomPos = position[randomPosIndex];
-  
-      this.item[randomPos] = this.workingWords.pop();
-      setTimeout( () => {
-        this.item[randomPos] = "";
-        setTimeout( () => this.showItems(), 2000 );
-      }, 150);
-    } else
-      this.showOutro();
-  }
-
   showOutro() {
     this.currentId = this.OUTRO_ID;
   }
 
   startDemo() {
-    this.currentId = this.DEMO_ID;
     this.workingWords = this.shuffle(this.words);
-    this.timer = "3";
-
-    
-    setTimeout(() => {
-      this.timer = "2";
-      setTimeout(() => {
-        this.timer = "1";
-        setTimeout(() => {
-          this.timer = "";
-          this.showItems();
-        }, 1000);
-      }, 1000);
-    }, 1000);
+    this.currentId = this.DEMO_ID;
   }
 
   startOver() {
