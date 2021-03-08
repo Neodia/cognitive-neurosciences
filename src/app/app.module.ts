@@ -22,6 +22,9 @@ import { MainComponent } from './main/main.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { IntroComponent } from './intro/intro.component'; 
 import { FormsModule } from '@angular/forms';
+import { ImageDefilerComponent } from './image-defiler/image-defiler.component';
+import { WordsDefilerComponent } from './words-defiler/words-defiler.component';
+import { TestExplanationComponent } from './test-explanation/test-explanation.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { FormsModule } from '@angular/forms';
     TestComponent,
     MainComponent,
     UserInfoComponent,
-    IntroComponent
+    IntroComponent,
+    ImageDefilerComponent,
+    WordsDefilerComponent,
+    TestExplanationComponent
   ],
   imports: [
     BrowserModule,

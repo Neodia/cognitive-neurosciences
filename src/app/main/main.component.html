@@ -9,6 +9,8 @@
         <app-user-info [user]="this.user" (goToUserInfo)="this.next()" class="h-auto my-auto col-md-12"></app-user-info>
     </div>
     
+    <div class="row w-100 h-100" *ngIf="currentId === TEST_EXPLANATION_ID">
+        <app-test-explanation class="h-auto my-auto col-md-12"></app-test-explanation>
+    </div>
     
-
 </div>

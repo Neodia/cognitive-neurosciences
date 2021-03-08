@@ -1,0 +1,51 @@
+<div *ngIf="currentId == INTRO_ID">
+    <div class="h1">Passons aux consignes. 😊</div>
+
+    <p>
+        Vous allez voir apparaitre au centre de votre écran un point noir, votre objectif principal : fixer le point tout au long de l’expérience !
+    </p>
+   
+    <p>
+        Des mots ou visages vont apparaitre à droit ou à gauche de ce point, votre second objectif : mémoriser les items.
+    </p>
+    
+    <p>
+        Toutes les 2 secondes vous verrez apparaitre un nouveau mot ou visage sur votre droite ou votre gauche.
+    </p>
+
+    <div class="h3">ATTENTION : </div>
+
+    <p>
+        Il est très important que vos yeux soient rivés sur le point central au moment de l’apparition des items. Si cela n’est pas le cas veuillez nous le spécifier à la fin de l’expérience.
+    </p>
+
+    <p>
+        Assurez-vous que vous passez cette expérience sur un écran dont la taille est supérieure à … (pas une tablette ni un téléphone)
+    </p>
+
+    <p>
+        Pour être sûr que tout soit bien compris vous allez pouvoir vous entrainer avec 6 items ! Si vous êtes prêt c’est parti ! 
+    </p>
+
+    <button mat-raised-button color="primary" (click)="nextClick()">Démonstration ></button>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-center h3">
+        {{ item["left"] }}
+    </div>
+
+    <div class="col-md-4">
+        <div style="width: 50px; height:50px" 
+            class="rounded-circle bg-dark text-center m-auto">
+            <span style="line-height: 50px" class="align-middle text-white h3 d-inline m-auto">
+                {{timer}}
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-4 text-center h3">
+        {{ item["right"] }}
+    </div>
+</div>

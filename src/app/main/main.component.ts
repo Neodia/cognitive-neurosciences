@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   TEST_ID = 4;
   OUTRO_ID = 5;
 
-  currentId = 1;
+  currentId = 3;
 
   user: User = new User();
 
