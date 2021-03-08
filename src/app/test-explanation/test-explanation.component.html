@@ -31,7 +31,7 @@
 
 </div>
 
-<app-words-defiler *ngIf="currentId == DEMO_ID" [workingWords]="workingWords" (onEnd)="showOutro()"></app-words-defiler>
+<app-words-defiler *ngIf="currentId == DEMO_ID" [words]="words" [images]="images" (onEnd)="showOutro()"></app-words-defiler>
 
 <div *ngIf="currentId == OUTRO_ID">
     <div class="h1">C’est bon, vous l’avez ? </div>

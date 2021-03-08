@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col-md-4 text-center h3">
-        {{ items["left"] }}
+        <span *ngIf="items['left'].type == 'Word'">{{ items["left"].val }}</span>
+        <img *ngIf="items['left'].type == 'Image'" class="images" src="assets/faces/{{items['left'].val}}"/>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 d-flex align-items-center">
         <div style="width: 50px; height:50px" 
             class="rounded-circle bg-dark text-center m-auto">
             <span style="line-height: 50px" class="align-middle text-white h3 d-inline m-auto">
@@ -13,6 +14,7 @@
     </div>
 
     <div class="col-md-4 text-center h3">
-        {{ items["right"] }}
+        <span *ngIf="items['right'].type == 'Word'">{{ items["right"].val }}</span>
+        <img *ngIf="items['right'].type == 'Image'" class="images" src="assets/faces/{{items['right'].val}}"/>
     </div>
 </div>

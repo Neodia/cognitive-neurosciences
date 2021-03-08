@@ -14,11 +14,28 @@ export class MainComponent implements OnInit {
   TEST_ID = 4;
   OUTRO_ID = 5;
 
-  currentId = 3;
+  currentId = this.INTRO_ID;
 
   user: User = new User();
 
-  constructor() { }
+  words = ["Lampe",
+    "Tissu",
+    "Niche",
+    "Boîte",
+    "Nuage",
+    "Tuile",
+    "Porte",
+    "Micro",
+    "Sauce",
+    "Stylo"
+  ];
+  images = []
+
+  NB_IMAGES = 64
+
+  constructor() {
+    this.images = Array.from(Array( this.NB_IMAGES ).keys()).map( k => k + ".jpg" )
+  }
 
   ngOnInit() {
   }
