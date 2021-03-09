@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -14,12 +14,13 @@ export class MainComponent implements OnInit {
   TEST_ID = 4;
   OUTRO_ID = 5;
 
-  currentId = this.INTRO_ID;
+  currentId = this.TEST_ID;
 
   user: User = new User();
 
   words = ["Lampe",
     "Tissu",
+    /*
     "Niche",
     "Boîte",
     "Nuage",
@@ -27,13 +28,15 @@ export class MainComponent implements OnInit {
     "Porte",
     "Micro",
     "Sauce",
-    "Stylo"
+    "Stylo" */
   ];
   images = []
 
   NB_IMAGES = 64
 
-  constructor() {
+  usedItems = {};
+
+  constructor(private cdRef : ChangeDetectorRef) {
     this.images = Array.from(Array( this.NB_IMAGES ).keys()).map( k => k + ".jpg" )
   }
 
@@ -43,6 +46,16 @@ export class MainComponent implements OnInit {
   next() {
     this.currentId++;
     console.log(this.user);
+  }
+
+  testEnd(usedItems) {
+    this.next();
+    this.usedItems = usedItems;
+  }
+
+  updateImages(images) {
+    this.images = images;
+    this.cdRef.detectChanges();
   }
 
 

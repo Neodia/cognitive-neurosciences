@@ -14,10 +14,13 @@ export class WordsDefilerComponent implements OnInit {
   images = [];
   workingImages = [];
 
+  @Output()
+  updateImages = new EventEmitter<Object>();
+
   itemsArray = [];
 
   @Output()
-  onEnd = new EventEmitter();
+  onEnd = new EventEmitter<Object>();
 
   items = {
     left : "",
@@ -39,7 +42,9 @@ export class WordsDefilerComponent implements OnInit {
 
   start() {
     this.words = this.shuffle(this.words);
-    this.workingImages = this.shuffle( this.images ).slice( 0, this.words.length );
+    this.images = this.shuffle(this.images);
+    this.workingImages = this.images.splice( 0, this.words.length );
+    this.updateImages.emit(this.images);
 
     // Merges the images and the words.
     this.words.forEach(w => this.itemsArray.push({ val: w, type: "Word" }));
@@ -87,7 +92,7 @@ export class WordsDefilerComponent implements OnInit {
   }
 
   end() {
-    this.onEnd.emit();
+    this.onEnd.emit({ words : this.words, images : this.workingImages });
   }
 
   shuffle(arr) {

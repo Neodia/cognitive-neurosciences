@@ -14,7 +14,8 @@
     </div>
     
     <div class="row w-100 h-100" *ngIf="currentId === TEST_ID">
-        <app-words-defiler  class="h-auto my-auto col-md-12" [images]="images" [words]="words" (onEnd)="next()"></app-words-defiler>
+        <app-words-defiler  class="h-auto my-auto col-md-12" [images]="images" [words]="words"
+        (updateImages)="updateImages($event)" (onEnd)="testEnd($event)"></app-words-defiler>
     </div>
     
 </div>
