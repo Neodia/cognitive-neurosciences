@@ -10,6 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
+import { MatCardModule } from '@angular/material/card'; 
 
 // Material
 import { MatFormFieldModule } from '@angular/material/form-field'; 
@@ -49,6 +50,7 @@ import { ImagesReviewComponent } from './images-review/images-review.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     MatDividerModule,
     MatButtonModule,
     MatRadioModule

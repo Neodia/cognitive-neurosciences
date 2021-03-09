@@ -1,0 +1,20 @@
+/* HIDE RADIO */
+[type=radio] { 
+  }
+
+  .card {
+      width: 22%;
+    border: 3px solid #673AB7;
+    border-radius: 12px;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    border: 5px solid #673AB7;
+    border-radius: 25px;
+  }

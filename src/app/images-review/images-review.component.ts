@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-images-review',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesReviewComponent implements OnInit {
 
+  @Input()
+  images = []
+
+  items = []
+
   constructor() { }
 
   ngOnInit() {
+    this.items.push("test/" + this.images[0]);
+    this.items.push(this.images[0].split(".")[0] + "/1.jpg");
+    this.items.push(this.images[0].split(".")[0] + "/2.jpg");
+    this.items.push(this.images[0].split(".")[0] + "/3.jpg");
   }
 
 }

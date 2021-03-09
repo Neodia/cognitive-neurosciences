@@ -17,5 +17,9 @@
         <app-words-defiler  class="h-auto my-auto col-md-12" [images]="images" [words]="words"
         (updateImages)="updateImages($event)" (onEnd)="testEnd($event)"></app-words-defiler>
     </div>
+
+    <div class="row w-100 h-100" *ngIf="currentId === IMAGES_REVIEW_ID">
+        <app-images-review class="h-auto my-auto col-md-12" [images]="images"></app-images-review>
+    </div>
     
 </div>
