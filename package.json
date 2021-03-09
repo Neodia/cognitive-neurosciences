@@ -27,6 +27,7 @@
     "google-spreadsheet": "^3.1.15",
     "ng-google-sheets-db": "^1.1.0",
     "rxjs": "~6.4.0",
+    "speak-tts": "^2.0.8",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

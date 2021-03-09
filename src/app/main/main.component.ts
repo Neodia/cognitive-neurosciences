@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../user';
 
+import { Speech } from 'speak-tts' // es6
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -20,7 +22,6 @@ export class MainComponent implements OnInit {
 
   words = ["Lampe",
     "Tissu",
-    /*
     "Niche",
     "Boîte",
     "Nuage",
@@ -28,16 +29,16 @@ export class MainComponent implements OnInit {
     "Porte",
     "Micro",
     "Sauce",
-    "Stylo" */
+    "Stylo"
   ];
   images = []
 
-  NB_IMAGES = 64
+  NB_IMAGES = 10
 
   usedItems = {};
 
   constructor(private cdRef : ChangeDetectorRef) {
-    this.images = Array.from(Array( this.NB_IMAGES ).keys()).map( k => k + ".jpg" )
+    this.images = Array.from(Array( this.NB_IMAGES ).keys()).map( k => (k+1) + ".jpg" )
   }
 
   ngOnInit() {

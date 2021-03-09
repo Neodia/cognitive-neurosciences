@@ -43,7 +43,7 @@ export class WordsDefilerComponent implements OnInit {
   start() {
     this.words = this.shuffle(this.words);
     this.images = this.shuffle(this.images);
-    this.workingImages = this.images.splice( 0, this.words.length );
+    this.workingImages = this.images.slice();
     this.updateImages.emit(this.images);
 
     // Merges the images and the words.
@@ -52,7 +52,7 @@ export class WordsDefilerComponent implements OnInit {
     this.itemsArray = this.shuffle(this.itemsArray);
 
     // Allows the same amount of images and words to be shown on each side.
-    this.itemsArray.slice(0, (this.itemsArray.length / 4) + (this.itemsArray.length / 4 > 0 ? 1 : 0) ).forEach(i => {
+    this.itemsArray.slice(0, (this.itemsArray.length / 4) + (this.itemsArray.length % 4 > 0 ? 1 : 0) ).forEach(i => {
       this.positions["Word"].push( "left" );
       this.positions["Word"].push( "right" );
       this.positions["Image"].push( "left" );
