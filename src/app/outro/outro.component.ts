@@ -10,6 +10,9 @@ export class OutroComponent implements OnInit {
   @Input()
   imageResults = {}
 
+  @Input()
+  wordResults = {}
+
   constructor() { }
 
   ngOnInit() {

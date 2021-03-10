@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
   IMAGES_REVIEW_ID = 6;
   OUTRO_ID = 7;
 
-  currentId = this.OUTRO_ID;
+  currentId = this.INTRO_ID;
 
   user: User = new User();
 
@@ -33,11 +33,20 @@ export class MainComponent implements OnInit {
     "Sauce",
     "Stylo"
   ];
+  noiseWords = [
+    "Lacet",
+    "Grain",
+    "Table",
+    "Évier",
+    "Arbre",
+    "Cadre"
+  ];
   images = []
 
   NB_IMAGES = 10
 
   usedItems = {};
+  wordResults = {};
   imageResults = {};
 
   constructor(private cdRef : ChangeDetectorRef) {
@@ -49,7 +58,6 @@ export class MainComponent implements OnInit {
 
   next() {
     this.currentId++;
-    console.log(this.user);
   }
 
   testEnd(usedItems) {
@@ -57,9 +65,20 @@ export class MainComponent implements OnInit {
     this.usedItems = usedItems;
   }
 
+  wordsReviewEnd(results) {
+    this.next();
+    this.wordResults = results;
+  }
+
   imageReviewEnd(results) {
     this.next()
     this.imageResults = results;
+
+    console.log("END");
+    console.log(this.user);
+    console.log(this.usedItems);
+    console.log(this.wordResults);
+    console.log(this.imageResults);
   }
 
   updateImages(images) {

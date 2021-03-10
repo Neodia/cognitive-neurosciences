@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider'; 
+import { MatIconModule } from '@angular/material/icon'; 
 
 import { MainComponent } from './main/main.component';
 import { UserInfoComponent } from './user-info/user-info.component';
@@ -27,6 +28,7 @@ import { WordsDefilerComponent } from './words-defiler/words-defiler.component';
 import { TestExplanationComponent } from './test-explanation/test-explanation.component';
 import { ImagesReviewComponent } from './images-review/images-review.component';
 import { OutroComponent } from './outro/outro.component';
+import { WordsReviewComponent } from './words-review/words-review.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { OutroComponent } from './outro/outro.component';
     WordsDefilerComponent,
     TestExplanationComponent,
     ImagesReviewComponent,
-    OutroComponent
+    OutroComponent,
+    WordsReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { OutroComponent } from './outro/outro.component';
     MatCardModule,
     MatDividerModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

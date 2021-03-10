@@ -18,12 +18,17 @@
         (updateImages)="updateImages($event)" (onEnd)="testEnd($event)"></app-words-defiler>
     </div>
 
+    <div class="row w-100 h-100" *ngIf="currentId === WORDS_REVIEW_ID">
+        <app-words-review class="h-auto my-auto col-md-12" 
+        [correctWords]="words" [noiseWords]="noiseWords" (onEnd)="wordsReviewEnd($event)"></app-words-review>
+    </div>
+
     <div class="row w-100 h-100" *ngIf="currentId === IMAGES_REVIEW_ID">
         <app-images-review class="h-auto my-auto col-md-12" [images]="images" (onEnd)="imageReviewEnd($event)"></app-images-review>
     </div>
 
     <div class="row w-100 h-100" *ngIf="currentId === OUTRO_ID">
-        <app-outro class="h-auto my-auto col-md-12" [imageResults]="imageResults" ></app-outro>
+        <app-outro class="h-auto my-auto col-md-12" [wordResults]="wordResults" [imageResults]="imageResults" ></app-outro>
     </div>
     
 </div>
