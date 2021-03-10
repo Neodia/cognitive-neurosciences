@@ -38,6 +38,7 @@ export class MainComponent implements OnInit {
   NB_IMAGES = 10
 
   usedItems = {};
+  imageResults = {};
 
   constructor(private cdRef : ChangeDetectorRef) {
     this.images = Array.from(Array( this.NB_IMAGES ).keys()).map( k => (k+1) + ".jpg" )
@@ -54,6 +55,11 @@ export class MainComponent implements OnInit {
   testEnd(usedItems) {
     this.next();
     this.usedItems = usedItems;
+  }
+
+  imageReviewEnd(results) {
+    this.next()
+    this.imageResults = results;
   }
 
   updateImages(images) {

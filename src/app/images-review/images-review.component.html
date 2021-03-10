@@ -1,6 +1,6 @@
 <div class="row">
     
-    <mat-radio-group class="row w-100 mt-3 d-flex justify-content-around">
+    <mat-radio-group [(ngModel)]="selectedImage" class="row w-100 mt-3 d-flex justify-content-around">
         <div *ngFor="let item of items" style="height: 320px;" class="d-flex flex-column card text-center">
             <img class="m-auto" src="assets/faces/{{item}}"/>
             <mat-radio-button class="m-auto" [value]="item"></mat-radio-button>
@@ -8,7 +8,8 @@
     </mat-radio-group>
 
     <div class="row w-100 mt-3">
-        <button mat-raised-button color="primary" class="m-auto" (click)="nextClick()">Suivant</button>
+        <button mat-raised-button color="primary" class="m-auto" [disabled]="selectedImage == null ? true : null"
+        (click)="selectImage()">Suivant</button>
     </div>
     
 </div>
