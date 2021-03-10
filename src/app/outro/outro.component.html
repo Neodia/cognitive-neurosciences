@@ -4,6 +4,10 @@
     <div class="h2">Résultats</div>
 
     <div class="h3">Mots</div>
+        <ul>
+            <li>Justes : {{imageResults['correct']}}</li>
+            <li>Faux : {{imageResults['wrong']}}</li>
+        </ul>
 
     <div class="h3">Images</div>
         <ul>
@@ -14,6 +18,17 @@
     <p>
         Avez-vous réussi à garder les yeux sur le point central <strong>pendant l'apparition</strong> de l'image/du mot ?
     </p>
+
+    <mat-radio-group class="d-flex flex-column">
+        <mat-radio-button [value]="Oui">Oui</mat-radio-button>
+        <mat-radio-button [value]="Non">Non</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+        <input matInput value="Email (Optionnel)">
+    </mat-form-field>
+    <br>
+
     <button mat-raised-button color="primary" (click)="finishClick()">Terminer</button>
 
 </div>
