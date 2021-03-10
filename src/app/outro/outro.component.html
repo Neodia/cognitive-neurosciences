@@ -1,0 +1,19 @@
+<div>
+    <div class="h1">Fin</div>
+
+    <div class="h2">Résultats</div>
+
+    <div class="h3">Mots</div>
+
+    <div class="h3">Images</div>
+        <ul>
+            <li>Justes : {{imageResults['correct']}}</li>
+            <li>Faux : {{imageResults['wrong']}}</li>
+        </ul>
+
+    <p>
+        Avez-vous réussi à garder les yeux sur le point central <strong>pendant l'apparition</strong> de l'image/du mot ?
+    </p>
+    <button mat-raised-button color="primary" (click)="finishClick()">Terminer</button>
+
+</div>
