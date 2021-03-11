@@ -7,6 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class WordsDefilerComponent implements OnInit {
 
+  showCenter = true;
+
   @Input()
   words = [];
 
@@ -94,10 +96,27 @@ export class WordsDefilerComponent implements OnInit {
       this.items[randomPos] = tmpItem;
       setTimeout( () => {
         this.items[randomPos] = "";
+
+        this.twinkle(6, 2000);
         setTimeout( () => this.showItems(), 2000 );
       }, 150);
     } else
       this.end();
+  }
+
+  twinkle(times, period) {
+    let totalTime = period / times;
+    let halvedTime = totalTime / 2;
+    this.showCenter = false;
+    console.log(totalTime);
+    
+    setTimeout(() => {
+      this.showCenter = true;
+      setTimeout( () => {
+        if(times > 1)
+          this.twinkle( times - 1, period - totalTime);
+      },halvedTime );
+    }, halvedTime);
   }
 
   end() {

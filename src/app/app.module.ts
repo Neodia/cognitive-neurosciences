@@ -29,7 +29,6 @@ import { TestExplanationComponent } from './test-explanation/test-explanation.co
 import { ImagesReviewComponent } from './images-review/images-review.component';
 import { OutroComponent } from './outro/outro.component';
 import { WordsReviewComponent } from './words-review/words-review.component';
-import { PreImagesReviewComponent } from './pre-images-review/pre-images-review.component';
 import { PreWordsReviewComponent } from './pre-words-review/pre-words-review.component';
 
 @NgModule({
@@ -44,7 +43,6 @@ import { PreWordsReviewComponent } from './pre-words-review/pre-words-review.com
     ImagesReviewComponent,
     OutroComponent,
     WordsReviewComponent,
-    PreImagesReviewComponent,
     PreWordsReviewComponent
   ],
   imports: [

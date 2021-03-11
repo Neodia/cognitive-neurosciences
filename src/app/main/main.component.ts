@@ -1,8 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../user';
 
-import { Speech } from 'speak-tts' // es6
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -19,7 +17,7 @@ export class MainComponent implements OnInit {
   IMAGES_REVIEW_ID = 7;
   OUTRO_ID = 8;
 
-  currentId = this.INTRO_ID;
+  currentId = this.TEST_ID;
 
   user: User = new User();
 
