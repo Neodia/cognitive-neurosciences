@@ -17,28 +17,28 @@ export class MainComponent implements OnInit {
   IMAGES_REVIEW_ID = 7;
   OUTRO_ID = 8;
 
-  currentId = this.TEST_ID;
+  currentId = this.INTRO_ID;
 
   user: User = new User();
 
-  words = ["Lampe",
-    "Tissu",
-    "Niche",
-    "Boîte",
-    "Nuage",
-    "Tuile",
-    "Porte",
-    "Micro",
-    "Sauce",
-    "Stylo"
+  words = ["LAMPE",
+    "TISSUE",
+    "NICHE",
+    "BOÎTE",
+    "NUAGE",
+    "TUILE",
+    "PORTE",
+    "MICRO",
+    "SAUCE",
+    "STYLO"
   ];
   noiseWords = [
-    "Lacet",
-    "Grain",
-    "Table",
-    "Évier",
-    "Arbre",
-    "Cadre"
+    "LACET",
+    "GRAIN",
+    "TABLE",
+    "ÉVIER",
+    "ARBRE",
+    "CADRE"
   ];
   images = []
   imagesDemo = [
