@@ -42,6 +42,11 @@ export class MainComponent implements OnInit {
     "Cadre"
   ];
   images = []
+  imagesDemo = [
+    "d1.jpg",
+    "d2.jpg",
+    "d3.jpg"
+  ];
 
   NB_IMAGES = 10
 
