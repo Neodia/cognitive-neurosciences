@@ -54,7 +54,6 @@ export class WordsDefilerComponent implements OnInit {
     this.words.forEach(w => this.itemsArray.push({ val: w, type: "Word" }));
     this.workingImages.forEach(i => this.itemsArray.push({ val: i, type: "Image" }));
     this.itemsArray = this.shuffle(this.itemsArray);
-    this.usedOrder = this.itemsArray.slice();
 
     // Allows the same amount of images and words to be shown on each side.
     this.itemsArray.slice(0, (this.itemsArray.length / 4) + (this.itemsArray.length % 4 > 0 ? 1 : 0) ).forEach(i => {
@@ -87,6 +86,11 @@ export class WordsDefilerComponent implements OnInit {
       let tmpItem = this.itemsArray.pop();
       let randomPos = this.positions[tmpItem.type].pop();
   
+      // Adds the side to the end result array.
+      let resultItem = Object.assign({}, tmpItem);
+      resultItem["side"] = randomPos;
+
+      this.usedOrder.push( resultItem );
       this.items[randomPos] = tmpItem;
       setTimeout( () => {
         this.items[randomPos] = "";
