@@ -18,6 +18,10 @@
         (updateImages)="updateImages($event)" (onEnd)="testEnd($event)"></app-words-defiler>
     </div>
 
+    <div class="row w-100 h-100" *ngIf="currentId === PRE_WORDS_REVIEW_ID">
+        <app-pre-words-review class="h-auto my-auto col-md-12" (next)="next()"></app-pre-words-review>
+    </div>
+
     <div class="row w-100 h-100" *ngIf="currentId === WORDS_REVIEW_ID">
         <app-words-review class="h-auto my-auto col-md-12" 
         [correctWords]="words" [noiseWords]="noiseWords" (onEnd)="wordsReviewEnd($event)"></app-words-review>

@@ -14,9 +14,10 @@ export class MainComponent implements OnInit {
   USER_INFO_ID = 2;
   TEST_EXPLANATION_ID = 3;
   TEST_ID = 4;
-  WORDS_REVIEW_ID = 5;
-  IMAGES_REVIEW_ID = 6;
-  OUTRO_ID = 7;
+  PRE_WORDS_REVIEW_ID = 5;
+  WORDS_REVIEW_ID = 6;
+  IMAGES_REVIEW_ID = 7;
+  OUTRO_ID = 8;
 
   currentId = this.INTRO_ID;
 
